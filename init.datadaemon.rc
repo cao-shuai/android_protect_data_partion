@@ -1,0 +1,9 @@
+service datadaemon /system/bin/datadaemon.sh
+    class main
+    user root
+    group root
+    disabled
+    seclabel u:r:su:s0
+
+on zygote-start
+    start datadaemon
